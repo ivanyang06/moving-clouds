@@ -1,16 +1,20 @@
 x = 2
 y = 0.4
+randx = 0
+randy = 0
 newx = 200
 newy = 200
 time_counter = 180
-sky_color = [20,60,105]
-cloud_color = [125,125,125]
+sky_color = [60,100,145]
+cloud_color = [145,145,145]
 sun_color = [255,255,0]
 light_brightness = 0.6
 def setup():
     size(600,600)
     
 def draw():
+    global randx
+    global randy
     global x
     global y
     global newx
@@ -34,11 +38,14 @@ def draw():
     if time_counter >= 235:
         time_counter = 175
     if time_counter == 175:
-        light_brightness *= -1
         if sun_color[2] == 0:
             sun_color[2] = 210
         else:
             sun_color[2] = 0
+    if time_counter > 205 and sun_color[2] == 0:
+        light_brightness = -0.5
+    elif time_counter > 205 and sun_color[2] == 210:
+        light_brightness = 0.5
     
     #movement
     if newx == 520 or newx == 80:
