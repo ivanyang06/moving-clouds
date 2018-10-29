@@ -10,7 +10,6 @@ cloud_color = [185,185,185]
 sun_color = [255,255,0]
 light_brightness = 0.6
 moonwidth = 0
-a = -1
 mooncounter = 0
 def setup():
     size(600,600)
